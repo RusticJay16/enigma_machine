@@ -3,7 +3,7 @@ print("loading encryption machine...")
 
 #importing library
 import time
-import os
+import shutil
 import pyperclip
 import random
 
@@ -16,24 +16,7 @@ finish = []
 text_list = []
 counter = 0
 
-alphabet = ["1" ,"-" ,"3" ,"h" ,"$" ,
-            "6" ,"=" ,"l" ,"g" ,"0" ,
-            "*" ,"W" ,"P" ,"D" ,"E" ,
-            "F" ,"u" ,"I" ,"k" ,"J" ,
-            "K" ,"L" ,"M" ,"(" ,"O" ,
-            "/" ,")" ,"t" ,"n" ,"T" ,
-            "U" ,":" ,"B" ,"X" ,"Y" ,
-            "Z" ,"a" ,"G" ,"c" ,"d" ,
-            "e" ,"f" ,";" ,"4" ,"i" ,
-            "j" ,"S" ,"8" ,"v" ,"H" ,
-            "o" ,"]" ,"q" ,"'" ,"s" ,
-            ">" ,"5" ,"C" ,"w" ,"x" ,
-            "y" ,"z" ,"V" ,"." ,"!" ,
-            "@" ,"#" ,"b" ,"%" ,"&" ,
-            "A" ,"N" ,"Q" ,"9" ,"+" ,
-            "_" ,"7" ,"m" ,"?" ,"<" ,
-            "[" ,"R" ,"p" ,"2" ,"," ,
-            "r" ]
+from alphabet import alphabet
 
 #defining function
 
@@ -86,11 +69,6 @@ while True :
     elif "dec" in mode :
         mode = False
         vencrypt = True
-        break
-
-    elif mode == "self_destruct" :
-        os.remove("enigma_machine_3.0.py")
-        print("enigma machine self destructed")
         break
 
     elif "ex" in mode :
@@ -148,3 +126,7 @@ if vencrypt == True :
 
     print("")
     print(f'"{temp}" have been copied to clipboard')
+
+
+
+shutil.rmtree("__pycache__")
