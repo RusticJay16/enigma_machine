@@ -4,7 +4,6 @@ print("loading encryption machine...")
 #importing library
 import time
 import shutil
-import pyperclip
 import random
 
 #defining global varible
@@ -119,14 +118,7 @@ if not mode and vencrypt :
     print("")
     print(f"{text} = {temp}")
 
-#copying to clipboard
 
-if vencrypt == True :
-    pyperclip.copy(temp)
-
-    print("")
-    print(f'"{temp}" have been copied to clipboard')
-
-
+#removing pycache
 
 shutil.rmtree("__pycache__")
