@@ -127,6 +127,7 @@ platform = platform.lower()
 if platform == "linux" :
     import pyperclip
     pyperclip.copy(temp)
+    print("")
     print(f'"{temp}" have been copied to clipboard')
 
 #removing pycache
