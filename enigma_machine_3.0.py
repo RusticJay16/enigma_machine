@@ -5,6 +5,7 @@ print("loading encryption machine...")
 import time
 import shutil
 import random
+import sys
 
 #defining global varible
 
@@ -118,6 +119,15 @@ if not mode and vencrypt :
     print("")
     print(f"{text} = {temp}")
 
+#copying text for linux
+
+platform = sys.platform
+platform = platform.lower()
+
+if platform == "linux" :
+    import pyperclip
+    pyperclip.copy(temp)
+    print(f'"{temp}" have been copied to clipboard')
 
 #removing pycache
 
